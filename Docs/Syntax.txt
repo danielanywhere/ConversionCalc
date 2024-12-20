@@ -1,0 +1,14 @@
+Demonstrate the functionality of the ConversionCalc library.
+
+Syntax:
+ConversionCalcExample /convertfrom:{ValueAndUnit} /convertto:{Unit} [/wait]
+
+    {ValueAndUnit}  -   A value followed by its associated unit.
+    {Unit}          -   A unit only.
+    /wait           -   When specified, the application will wait for the user
+                        to press [Enter] after processing has completed and
+                        before closing the application.
+
+Example:
+ConversionCalcExample /convertfrom:10 miles /convertto:mm
+

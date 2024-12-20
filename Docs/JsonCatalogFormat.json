@@ -1,0 +1,29 @@
+{
+ "Remarks": [ "" ],
+ "Domains":
+ [
+  {
+   "DomainName": "",
+   "Remarks": [ "" ],
+   "Conversions":
+   [
+    {
+     "EntryType": "",
+     "Name": "",
+     "Aliases": [ "" ],
+     "Operation": "",
+     "RefName": "",
+     "Value": 1,
+     "Steps":
+     [
+      {
+       "RefName": "",
+       "Operation": "",
+       "Value": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

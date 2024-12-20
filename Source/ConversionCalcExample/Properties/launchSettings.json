@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConversionCalcExample": {
+      "commandName": "Project",
+      "commandLineArgs": "/wait \"/convertfrom:9.99 l/sec\" /convertto:cc/min"
+    }
+  }
+}

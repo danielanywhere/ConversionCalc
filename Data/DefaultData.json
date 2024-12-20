@@ -1,0 +1,1899 @@
+{
+	"Remarks": [
+		"In the weights and measures configuration, the strategy is as follows:",
+		"1. - Convert the given value to its base.",
+		"2. - Convert from the base to the target unit.",
+		"All of the entries in the data catalog are annotated such you first ",
+		"look up the source unit in the conversions list, then perform the ",
+		"noted operation on that entry to arrive at the base value for the ",
+		"domain. By default, when an Operation property is not specified, ",
+		"Multiply is implied.",
+		"",
+		"For the second step of the conversion, the reverse process of the ",
+		"target conversion unit is performed to arrive at that answer.",
+		"",
+		"For example to convert between 10 cm and mm, the base for the domain is ",
+		"m. First, the source unit, cm, is located, which has a multiplcation ",
+		"value of 0.01.",
+		"",
+		"In Step 1, 10 x 0.01 = 0.1m.",
+		"",
+		"Now, we'll convert the m unit to the target unit of mm.",
+		"Looking up mm, we find that the forward conversion is Multiply: 0.001, ",
+		"the reverse of which is either Divide: 0.001 or Multiply: (1/0.001).",
+		"In Step 2, 0.1 / 0.001 = 100mm.",
+		"",
+		"Note that when a procedural conversion is selected during Step 2, not ",
+		"only are the mathematical operators reversed, but the order of steps ",
+		"runs from last to first.",
+		"",
+		"In this chart, seconds are the basis of time."
+	],
+	"Domains": [
+		{
+			"DomainName": "Binary Data",
+			"Remarks": [
+				"This version of the binary data domain maintains the original ",
+				"processor-agnostic binary theory that the basic sizes of all units ",
+				"are universally permanent and static.",
+				"In that system:",
+				"a BIT is 1 binary unit, ",
+				"a BYTE is 8 BITS, ",
+				"a WORD is 2 BYTES, ",
+				"a DOUBLE WORD is 2 WORDS, and ",
+				"a QUAD WORD is 4 WORDS."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "byte",
+					"Aliases": [
+						"bytes",
+						"B",
+						"char",
+						"character",
+						"Int8",
+						"Integer8"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "bit",
+					"Aliases": [
+						"b"
+					],
+					"Value": 0.125
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "bool",
+					"Aliases": [
+						"bitmask",
+						"Boolean"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "datetime",
+					"Aliases": [
+						"timestamp"
+					],
+					"Value": 8
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "double",
+					"Aliases": [
+						"double floating point"
+					],
+					"Value": 8
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "double word",
+					"Aliases": [
+						"DW"
+					],
+					"Value": 4
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "gigabit",
+					"Aliases": [
+						"gigabits",
+						"gb"
+					],
+					"Value": 134217728
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "gigabyte",
+					"Aliases": [
+						"gigabytes",
+						"gB"
+					],
+					"Value": 1073741824
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "Integer16",
+					"Aliases": [
+						"Int16"
+					],
+					"Value": 2
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "Integer32",
+					"Aliases": [
+						"int",
+						"Int32"
+					],
+					"Value": 4
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "Integer64",
+					"Aliases": [
+						"Int64"
+					],
+					"Value": 8
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ip packet",
+					"Aliases": [
+						"tcp packet",
+						"udp packet"
+					],
+					"Value": 1500
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "kilobit",
+					"Aliases": [
+						"kilobits",
+						"kb"
+					],
+					"Value": 128
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "kilobyte",
+					"Aliases": [
+						"kilobytes",
+						"kB"
+					],
+					"Value": 1024
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "megabit",
+					"Aliases": [
+						"megabits",
+						"mb"
+					],
+					"Value": 131072
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "megabyte",
+					"Aliases": [
+						"megabytes",
+						"mB"
+					],
+					"Value": 1048576
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "nibble",
+					"Aliases": [
+						"nibbles"
+					],
+					"Value": 0.5
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "quad word",
+					"Aliases": [
+						"quad words",
+						"QW"
+					],
+					"Value": 8
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "single",
+					"Aliases": [
+						"float"
+					],
+					"Value": 4
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "terabit",
+					"Aliases": [
+						"terabits",
+						"tb"
+					],
+					"Value": 137438953472
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "terabyte",
+					"Aliases": [
+						"terabytes",
+						"tB"
+					],
+					"Value": 1099511627776
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "word",
+					"Aliases": [
+						"words",
+						"W"
+					],
+					"Value": 2
+				}
+			]
+		},
+		{
+			"DomainName": "Count",
+			"Remarks": [
+				"The Count domain translates different general methods for ",
+				"counting objects.",
+				"Certain counting terms that have no discrete basis, like ",
+				"'set' and 'fleet' have been omitted."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "each",
+					"Aliases": [
+						"ea"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "deca",
+					"Value": 10
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "dozen",
+					"Aliases": [
+						"doz"
+					],
+					"Value": 12
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "giga",
+					"Value": 1000000000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "gross",
+					"Value": 144
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "hundred",
+					"Value": 100
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "kilo",
+					"Aliases": [
+						"k"
+					],
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mega",
+					"Aliases": [
+						"m"
+					],
+					"Value": 1000000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "package",
+					"Aliases":
+					[
+						"pkg"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "pair",
+					"Aliases": [
+						"pr"
+					],
+					"Value": 2
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "peta",
+					"Value": 1000000000000000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ream",
+					"Value": 500
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "score",
+					"Value": 20
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "tera",
+					"Value": 1000000000000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "thousand",
+					"Value": 1000
+				}
+			]
+		},
+		{
+			"DomainName": "Density",
+			"Remarks": [
+				"The density of a material is the ratio of its mass to the volume it ",
+				"occupies.",
+				"Density is influenced by the mass of the atoms, their dimensions, ",
+				"and their physical arrangement.",
+				"Density is calculated by dividing the mass of the material by its ",
+				"volume, represented by the formula: D=m/v."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "kg/m3"
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "g/cc",
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "g/cm3",
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "g/l",
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "kg/m3",
+					"Value": 1
+				}
+			]
+		},
+		{
+			"DomainName": "Distance",
+			"Remarks": [
+				"Distance can be measured in various units, from nanometers (nm) ",
+				"for tiny objects to light years for astronomical distances. ",
+				"A millimeter is useful for small-scale measurements, while a light ",
+				"year, about 9.46 trillion kilometers, measures the vast distances ",
+				"light travels in a year. These units help us describe everything ",
+				"from the microscopic to the cosmic scale."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "m",
+					"Aliases":
+					[
+						"meter", "meters"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cm",
+					"Aliases":
+					[
+						"centimeter", "centimeters"
+					],
+					"Value": 0.01
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cm/sec",
+					"Aliases": [
+						"centimeter/sec",
+						"centimeters/sec"
+					],
+					"Value": 0.01
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ft",
+					"Aliases": [
+						"foot",
+						"feet"
+					],
+					"Value": 0.3048
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ft/sec",
+					"Aliases": [
+						"foot/sec",
+						"feet/sec"
+					],
+					"Value": 0.3048
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "in",
+					"Aliases": [
+						"inch",
+						"inches"
+					],
+					"Value": 0.0254
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "in/sec",
+					"Aliases": [
+						"inch/sec",
+						"inches/sec"
+					],
+					"Value": 0.0254
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "km",
+					"Aliases": [
+						"kilometer",
+						"kilometers"
+					],
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "km/sec",
+					"Aliases": [
+						"kilometer/sec",
+						"kilometers/sec"
+					],
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "m/sec",
+					"Aliases": [
+						"meter/sec",
+						"meters/sec"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mm",
+					"Aliases": [
+						"millimeter",
+						"millimeters"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mm/sec",
+					"Aliases": [
+						"millimeter/sec",
+						"millimeters/sec"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "nm",
+					"Aliases": [
+						"nanometer",
+						"nanometers"
+					],
+					"Value": 0.000000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "nm/sec",
+					"Aliases": [
+						"nanometer/sec",
+						"nanometers/sec"
+					],
+					"Value": 0.000000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mi",
+					"Aliases": [
+						"mile",
+						"miles"
+					],
+					"Value": 1609.3445
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mi/sec",
+					"Aliases": [
+						"mile/sec",
+						"miles/sec"
+					],
+					"Value": 1609.3445
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "C",
+					"Aliases": [ "C/sec" ],
+					"Value": 299792458
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "AU",
+					"Value": 149597870691
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "AU/sec",
+					"Value": 149597870691
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cm/min",
+					"Aliases": [
+						"centimeter/min",
+						"centimeters/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cm/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cm/hr",
+					"Aliases": [
+						"centimeter/hr",
+						"centimeters/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cm/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "ft/min",
+					"Aliases": [
+						"foot/min",
+						"feet/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "ft/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "ft/hr",
+					"Aliases": [
+						"foot/hr",
+						"feet/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "ft/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "in/min",
+					"Aliases": [
+						"inch/min",
+						"inches/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "in/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "in/hr",
+					"Aliases": [
+						"inch/hr",
+						"inches/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "in/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "m/min",
+					"Aliases": [
+						"meter/min",
+						"meters/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "m/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "m/hr",
+					"Aliases": [
+						"meter/hr",
+						"meters/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "m/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "mm/min",
+					"Aliases": [
+						"millimeter/min",
+						"millimeters/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "mm/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "mm/hr",
+					"Aliases": [
+						"millimeter/hr",
+						"millimeters/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "mm/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "km/min",
+					"Aliases": [
+						"kilometer/min",
+						"kilometers/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "km/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "km/hr",
+					"Aliases":
+					[
+						"kilometer/hr",
+						"kilometers/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "km/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "mi/min",
+					"Aliases": [
+						"mile/min",
+						"miles/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "mi/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "mi/hr",
+					"Aliases": [
+						"mile/hr",
+						"miles/hr",
+						"mph",
+						"MPH"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "mi/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "C/min",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "C/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "C/hr",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "C/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "C/day",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 86400
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "C/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "C/wk",
+					"Aliases": [
+						"C/week"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 604800
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "C/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "C/yr",
+					"Aliases": [
+						"C/year"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 31449600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "C/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/min",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/hr",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/day",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 86400
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/wk",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 604800
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/week",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 604800
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "AU/year",
+					"Aliases":
+					[
+						"AU/yr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 31449600
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "AU/sec"
+						}
+					]
+				}
+			]
+		},
+		{
+			"DomainName": "Power",
+			"Remarks": [
+				"Power measurements help us understand the rate at which energy is used or transferred."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "watt",
+					"Aliases":
+					[
+						"watts", "w", "W"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "horsepower",
+					"Aliases":
+					[
+						"hp"
+					],
+					"Value": 745.7
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "n/sec",
+					"Aliases": [
+						"newton/sec",
+						"newtons/sec"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "newton-meter/sec",
+					"Aliases": [
+						"newton-meters/sec"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "joule/sec",
+					"Aliases":
+					[
+						"joules/sec", "j/sec"
+					],
+					"Value": 1
+				}
+			]
+		},
+		{
+			"DomainName": "Pressure",
+			"Remarks": [
+				"Pressure measurements are essential in various fields, from engineering ",
+				"to meteorology. ",
+				"These units help us quantify and compare pressures in different ",
+				"contexts, ensuring accurate and consistent measurements across various ",
+				"industries."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "pa",
+					"Aliases": [
+						"pascal",
+						"pascals"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "atm",
+					"Value": 101325
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "bar",
+					"Value": 101325
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "psi",
+					"Aliases": [
+						"psia"
+					],
+					"Value": 6894.75728
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "psig",
+					"Steps": [
+						{
+							"Operation": "Add",
+							"Value": 14.69595
+						},
+						{
+							"Operation": "Multiply",
+							"Value": 6894.75728
+						}
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "joule",
+					"Aliases":
+					[
+						"j"
+					],
+					"Value": 1
+				}
+			]
+		},
+		{
+			"DomainName": "Temperature",
+			"Remarks": [
+				"Temperature measurements are crucial in various fields, using different ",
+				"scales like Fahrenheit (°F), Celsius (°C), and Kelvin (K). ",
+				"These scales help us accurately measure and communicate temperature in ",
+				"diverse applications, from weather forecasting to scientific research."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "K",
+					"Aliases":
+					[
+						"Kelvin"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "Celsius",
+					"Aliases": [ "Centigrade", "C" ],
+					"Operation": "Add",
+					"Value": 273.15
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "Fahrenheit",
+					"Aliases": [ "F" ],
+					"Steps": [
+						{
+							"Operation": "Subtract",
+							"Value": 32
+						},
+						{
+							"Operation": "Divide",
+							"Value": 1.8
+						},
+						{
+							"Operation": "Add",
+							"Value": 273.15
+						}
+					]
+				}
+			]
+		},
+		{
+			"DomainName": "Time",
+			"Remarks": [
+				"Time can be measured in various units, each suited for different scales. ",
+				"For instance, a nanosecond (ns) is one-billionth of a second, often ",
+				"used in high-speed computing and electronics. ",
+				"These units allow us to measure and understand time from the incredibly ",
+				"brief to the vast expanses of history."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "sec",
+					"Aliases":
+					[
+						"second", "seconds", "s"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ms",
+					"Aliases": [ "millisecond", "milliseconds" ],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "us",
+					"Aliases": [ "microsecond", "microseconds" ],
+					"Value": 0.000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ns",
+					"Aliases": [ "nanosecond", "nanoseconds" ],
+					"Value": 0.000000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ps",
+					"Aliases": [ "picosecond", "picoseconds" ],
+					"Value": 0.000000000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "min",
+					"Aliases": [
+						"minute", "minutes", "m"
+					],
+				"Value": 60
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "hr",
+					"Aliases": [
+						"hour", "hours", "h"
+					],
+					"Value": 3600
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "day",
+					"Aliases": [ "days", "d" ],
+					"Value": 86400
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "wk",
+					"Aliases": [ "week", "weeks", "w" ],
+					"Value": 604800
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mo",
+					"Aliases": [ "month", "months", "M" ],
+					"Value": 2620800
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "yr",
+					"Aliases": [ "year", "years", "y" ],
+					"Value": 31449600
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "hz",
+					"Aliases": [ "hertz" ],
+					"Steps": [
+						{
+							"Operation": "Reciprocal"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "rpm",
+					"Aliases": [
+						"revolutions per minute",
+						"rotations per minute"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Reciprocal"
+						}
+					]
+				}
+			]
+		},
+		{
+			"DomainName": "Volume",
+			"Remarks": [
+				"Volume can be measured using various units depending on the context. ",
+				"These units help us quantify and compare volumes in different settings, ",
+				"from everyday cooking to industrial applications."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "l",
+					"Aliases": [ "liter", "liters" ]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cc",
+					"Aliases": [
+						"cm3",
+						"cubic centimeter",
+						"cubic centimeters"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cc/sec",
+					"Aliases": [
+						"cm3/sec",
+						"cubic centimeter/sec",
+						"cubic centimeters/sec"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cf",
+					"Aliases": [ "cubic foot", "cubic feet" ],
+					"Value": 28.3168
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cf/sec",
+					"Aliases": [
+						"cubic foot/sec",
+						"cubic feet/sec"
+					],
+					"Value": 28.3168
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cf/min",
+					"Aliases": [
+						"cubic foot/min",
+						"cubic feet/min"
+					],
+					"Value": 1699.008
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cu/in",
+					"Aliases": [ "cu.in.", "cubic inch", "cubic inches" ],
+					"Value": 0.0163871
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cu/in/sec",
+					"Aliases": [
+						"cu.in./sec",
+						"cubic inch/sec",
+						"cubic inches/sec"
+					],
+					"Value": 0.0163871
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "fl.oz.",
+					"Aliases": [
+						"oz",
+						"ounce",
+						"ounces",
+						"fluid ounce",
+						"fluid ounces"
+					],
+					"Value": 0.0295735
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "fl.oz./sec",
+					"Aliases": [
+						"oz/sec",
+						"ounce/sec",
+						"ounces/sec",
+						"fluid ounce/sec",
+						"fluid ounces/sec"
+					],
+					"Value": 0.0295735
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "l/sec",
+					"Aliases": [ "liter/sec", "liters/sec" ],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "m3",
+					"Aliases": [ "cubic meter", "cubic meters" ],
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "m3/sec",
+					"Aliases": [
+						"cubic meter/sec",
+						"cubic meters/sec"
+					],
+					"Value": 1000
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ml",
+					"Aliases": [ "milliliter", "milliliters"],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "ml/sec",
+					"Aliases": [
+						"milliliter/sec",
+						"milliliters/sec"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "scfm",
+					"Aliases": [ "standard cubic feet per minute" ],
+					"Value": 1699.008
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cup",
+					"Aliases": [ "cups" ],
+					"Value": 28.3168
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "cup/sec",
+					"Aliases": [ "cups/sec" ],
+					"Value": 28.3168
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "tsp",
+					"Aliases": [ "teaspoon", "teaspoons" ],
+					"Value": 0.00492892
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "tsp/sec",
+					"Aliases": [
+						"teaspoon/sec",
+						"teaspoons/sec"
+					],
+					"Value": 0.00492892
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "tbsp",
+					"Aliases": [ "tablespoon", "tablespoons" ],
+					"Value": 0.0147868
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "tbsp/sec",
+					"Aliases": [
+						"tablespoon/sec",
+						"tablespoons/sec"
+					],
+					"Value": 0.0147868
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "gal",
+					"Aliases": [ "galon", "gallons" ],
+					"Value": 3.78541
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "gal/sec",
+					"Aliases": [
+						"galon/sec",
+						"gallons/sec"
+					],
+					"Value": 3.78541
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cc/min",
+					"Aliases": [
+						"cm3/min",
+						"cubic centimeter/min",
+						"cubic centimeters/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cc/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cu/in/min",
+					"Aliases": [ "cu.in./min", "cubic inch/min", "cubic inches/min"],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cu/in/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "fl.oz./min",
+					"Aliases":
+					[
+						"oz/min",
+						"ounce/min",
+						"ounces/min",
+						"fluid ounce/min",
+						"fluid ounces/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "fl.oz./sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "l/min",
+					"Aliases": [ "liter/min", "liters/min" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "l/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "m3/min",
+					"Aliases": [ "cubic meter/min", "cubic meters/min" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "m3/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "ml/min",
+					"Aliases": [ "milliliter/min", "milliliters/min" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "ml/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cc/hr",
+					"Aliases": [
+						"cm3/hr",
+						"cubic centimeter/hr",
+						"cubic centimeters/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cc/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cf/hr",
+					"Aliases": [ "cubic foot/hr", "cubic feet/hr" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cf/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "cu/in/hr",
+					"Aliases": [ "cu.in./hr", "cubic inch/hr", "cubic inches/hr" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "cu/in/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "fl.oz./hr",
+					"Aliases": [
+						"oz/hr",
+						"ounce/hr",
+						"ounces/hr",
+						"fluid ounce/hr",
+						"fluid ounces/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "fl.oz./min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "l/hr",
+					"Aliases": [ "liter/hr", "liters/hr" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "l/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "m3/hr",
+					"Aliases": [ "cubic meter/hr", "cubic meters/hr" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "m3/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "ml/hr",
+					"Aliases": [ "milliliter/hr", "milliliters/hr" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "ml/min"
+						}
+					]
+				}
+			]
+		},
+		{
+			"DomainName": "Weight",
+			"Remarks": [
+				"Weight can be measured using various units depending on the context. ",
+				"These units help to accurately measure and compare weights in various ",
+				"applications, from cooking to industrial use."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "kg",
+					"Aliases": [ "kilogram", "kilograms", "kilo", "kilos" ]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "g",
+					"Aliases": [ "gram", "grams" ],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "g/sec",
+					"Aliases": [
+						"gram/sec",
+						"grams/sec"
+					],
+					"Value": 0.001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "kg/sec",
+					"Aliases": [
+						"kilogram/sec",
+						"kilograms/sec",
+						"kilo/sec",
+						"kilos/sec"
+					],
+					"Value": 1
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "lb",
+					"Aliases": [
+						"lbs",
+						"pound",
+						"pounds"
+					],
+					"Value": 0.453592
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "lb/sec",
+					"Aliases": [
+						"lbs/sec",
+						"pound/sec",
+						"pounds/sec"
+					],
+					"Value": 0.453592
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mg",
+					"Aliases": [
+						"milligram",
+						"milligrams"
+					],
+					"Value": 0.000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "mg/sec",
+					"Aliases": [
+						"milligram/sec",
+						"milligrams/sec"
+					],
+					"Value": 0.000001
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "oz",
+					"Aliases": [ "ounce", "ounces" ],
+					"Value": 0.0283495
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "oz/sec",
+					"Aliases": [
+						"ounce/sec",
+						"ounces/sec"
+					],
+					"Value": 0.0283495
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "g/min",
+					"Aliases": [ "gram/min", "grams/min" ],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "g/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "kg/min",
+					"Aliases": [
+						"kilogram/min",
+						"kilograms/min",
+						"kilo/min",
+						"kilos/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "kg/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "lb/min",
+					"Aliases": [
+						"lbs/min",
+						"pound/min",
+						"pounds/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "lb/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "oz/min",
+					"Aliases":
+					[
+						"ounce/min",
+						"ounces/min"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "oz/sec"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "g/hr",
+					"Aliases": [
+						"gram/hr",
+						"grams/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "g/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "kg/hr",
+					"Aliases": [
+						"kilogram/hr",
+						"kilograms/hr",
+						"kilo/hr",
+						"kilos/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "kg/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "lb/hr",
+					"Aliases": [
+						"lbs/hr",
+						"pound/hr",
+						"pounds/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "lb/min"
+						}
+					]
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "oz/hr",
+					"Aliases": [
+						"ounce/hr",
+						"ounces/hr"
+					],
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 60
+						},
+						{
+							"Operation": "Convert",
+							"RefName": "oz/min"
+						}
+					]
+				}
+			]
+		}
+	]
+}
