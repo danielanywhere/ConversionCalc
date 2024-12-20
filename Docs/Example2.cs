@@ -2,7 +2,7 @@ using System;
 using ConversionCalc;
 
 // Multiple conversions for different domains for
-// user input of 1000 mi/sec to mi/hr.
+// user input of 1000 km/sec to mi/hr.
 namespace MyProject
 {
  public class Program
