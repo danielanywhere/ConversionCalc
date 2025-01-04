@@ -57,7 +57,15 @@ namespace ConversionCalc
 		/// <summary>
 		/// Get the reciprocal of the value (1/value).
 		/// </summary>
-		Reciprocal
+		Reciprocal,
+		/// <summary>
+		/// Get the square of the value (POW(value, 2)).
+		/// </summary>
+		Square,
+		/// <summary>
+		/// Get the square root of the value (SQRT(value)).
+		/// </summary>
+		SquareRoot
 	}
 	//*-------------------------------------------------------------------------*
 

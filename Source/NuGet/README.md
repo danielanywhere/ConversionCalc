@@ -1,8 +1,7 @@
 # Dan's ConversionCalc Library
 
-An easy-to-implement function library providing generic numeric
-conversions in a wide array of possible scenarios for engineering and
-practical applications.
+An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications.
+
 
 Basic Example:
 
@@ -25,6 +24,16 @@ namespace MyProject
 }
 
 ```
+
+## Updates
+
+| Version | Description |
+|---------|-------------|
+| 25.1104.1240 | Added overload method **public double Convert(string domainName, double sourceValue, string sourceUnit,string targetUnit)**. This provides a method by which you can perform a domain-specific conversion with a case-insensitive partial name of the intended conversion category; **Angles** and **Circles** conversion categories have been added to the default rule set. |
+| 24.1220.1425 | Initial public release. |
+
+
+## More Information
 
 For more information, please see the GitHub project:
 [danielanywhere/ConversionCalc](https://github.com/danielanywhere/ConversionCalc)

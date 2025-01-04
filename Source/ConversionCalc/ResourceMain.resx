@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,8 +123,8 @@
 		"In the weights and measures configuration, the strategy is as follows:",
 		"1. - Convert the given value to its base.",
 		"2. - Convert from the base to the target unit.",
-		"All of the entries in the data catalog are annotated such you first ",
-		"look up the source unit in the conversions list, then perform the ",
+		"All of the entries in the data catalog are annotated such that you ",
+		"first look up the source unit in the conversions list, then perform the ",
 		"noted operation on that entry to arrive at the base value for the ",
 		"domain. By default, when an Operation property is not specified, ",
 		"Multiply is implied.",
@@ -150,6 +150,39 @@
 		"In this chart, seconds are the basis of time."
 	],
 	"Domains": [
+		{
+			"DomainName": "Angles",
+			"Remarks": [
+				"Humans often measure angles in degrees because the ",
+				"system has markers that are easy to remmeber and ",
+				"easy to calculate in one's head. However, many ",
+				"mathematical conversions and calculations require ",
+				"radians, due to the fact that a radian is a natural ",
+				"unit of measure within the circle. Where 1 radian is ",
+				"equal to the distance of an arc the length of one ",
+				"radius, 2pi radians is equal to the circumference of ",
+				"a circle."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "radian",
+					"Aliases": [
+						"radians",
+						"rad"
+					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "degree",
+					"Aliases": [
+						"degrees",
+						"deg"
+					],
+					"Value": 0.01745329251994329576923690768489
+				}
+			]
+		},
 		{
 			"DomainName": "Binary Data",
 			"Remarks": [
@@ -356,6 +389,54 @@
 						"W"
 					],
 					"Value": 2
+				}
+			]
+		},
+		{
+			"DomainName": "Circles",
+			"Remarks": [
+				"A circle is a fascinating geometric shape with ",
+				"several key parts that are all interconnected. The ",
+				"radius is the distance from the center of the circle ",
+				"to any point on its edge. The diameter is twice the ",
+				"length of the radius, stretching from one edge of the ",
+				"circle to the opposite edge, passing through the ",
+				"center. The circumference is the total distance ",
+				"around the circle, which can be calculated using the ",
+				"formula 𝐶=2𝜋𝑟, where 𝑟 is the radius. The area of the ",
+				"circle, representing the space enclosed within its ",
+				"boundary, is given by the formula 𝐴=𝜋𝑟2. Each of ",
+				"these parts plays a crucial role in defining the ",
+				"properties and measurements of a circle."
+			],
+			"Conversions": [
+				{
+					"EntryType": "Base",
+					"Name": "radius"
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "diameter",
+					"Value": 0.5
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "circumference",
+					"Operation": "Divide",
+					"Value": 6.283185307179586476925286766559
+				},
+				{
+					"EntryType": "Procedure",
+					"Name": "area",
+					"Steps": [
+						{
+							"Operation": "Divide",
+							"Value": 3.1415926535897932384626433832795
+						},
+						{
+							"Operation": "SquareRoot"
+						}
+					]
 				}
 			]
 		},

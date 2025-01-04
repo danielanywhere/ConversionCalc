@@ -10,7 +10,7 @@ practical applications.
 
 You can jump to any section of this page from the following list.
 
--   [25 Years of .NET](#25-years-of-net).
+-   [25 Years of .NET](#years-of-.net).
 
 -   [Yet Another Value Converter](#yet-another-value-converter).
 
@@ -259,7 +259,7 @@ using System;
 using ConversionCalc;
 
 // Multiple conversions for different domains for
-// user input of 1000 mi/sec to mi/hr.
+// user input of 1000 km/sec to mi/hr.
 namespace MyProject
 {
  public class Program
@@ -370,8 +370,13 @@ major measurement categories, or domains, to which they apply.
 \[Bracketed\] values next to a unit name indicate other names by which
 that unit is equally recognized.
 
+-   [Angles](#angles). Converting angles between radians and degrees.
+
 -   [Binary Data](#binary-data). Working with binary-oriented
     conversions.
+
+-   [Circles](#circles). Converting between the characteristics of a
+    circle.
 
 -   [Count](#count). Common methods for counting and enumerating
     objects, like dozen, pair, etc.
@@ -396,6 +401,34 @@ that unit is equally recognized.
     or gas.
 
 -   [Weight](#weight). General conversions of weight and mass.
+
+<p>&nbsp;</p>
+
+### Angles
+
+The angles category is sparse in this version with only a conversion
+path between radians and degrees.
+
+<p>&nbsp;</p>
+
+#### Units
+
+The following units are currently available in this domain.
+
+-   **degree**. \[degrees, deg\]. With its roots in ancient
+    civilizations, like the Sumerians and Babylonians, who used a
+    base-60 numbering system, a degree is 1/360 of a full revolution. A
+    circle divided into 360 degrees not only aligns it generally with
+    the number of days in a year but offers a greater than usual number
+    of even divisors, making it convenient for people to easily divide a
+    circle into one of several patterns of even parts. Most angles are
+    expressed by humans in the form of degrees.
+
+-   **radian**. \[radians, rad\]. A radian, or one radius length along
+    the circumference of a circle, is an ideal way by which to perform
+    angular calculations because of the radius' relationship to the
+    circle through PI. Most trigonometric calculations are performed
+    directly in radians.
 
 <p>&nbsp;</p>
 
@@ -567,6 +600,37 @@ The following discrete units are available in this domain.
 -   **word**. \[words, W\]. A system-agnostic word is two bytes or 16
     bits. This size is often seen represented in the typical groupings
     of four hexadecimal characters per expression.
+
+<p>&nbsp;</p>
+
+### Circles
+
+A circle is a fascinating geometric shape with several key parts that
+are all interconnected. The radius is the distance from the center of
+the circle to any point on its edge. The diameter is twice the length of
+the radius, stretching from one edge of the circle to the opposite edge,
+passing through the center. The circumference is the total distance
+around the circle, which can be calculated using the formula C=2𝜋r,
+where r is the radius. The area of the circle, representing the space
+enclosed within its boundary, is given by the formula A=𝜋r2. Each of
+these parts plays a crucial role in defining the properties and
+measurements of a circle.
+
+<p>&nbsp;</p>
+
+#### Units
+
+Here are the units in this version of the Circles category.
+
+-   **area**. The area of a circle is 𝜋r2.
+
+-   **circumference**. The circumference, or length of border, of a
+    circle is 2𝜋r.
+
+-   **diameter**. The diameter of a circle is 2r.
+
+-   **radius**. The radius of a circle is the distance from its center
+    to the edge.
 
 <p>&nbsp;</p>
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c). 1997 - 2024 Daniel Patterson, MCSD (danielanywhere).
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -376,6 +376,19 @@ namespace ConversionCalcExample
 			converter.SourceUnitNotFound += converter_SourceUnitNotFound;
 			converter.TargetUnitNotFound += converter_TargetUnitNotFound;
 
+			//	Test Degrees to Radians.
+			Console.WriteLine("-----");
+			Console.WriteLine("Test degrees to radians.");
+			Console.WriteLine("Convert from 57.3 deg to rad");
+			toValue = converter.Convert("angles", 57.3, "deg", "rad");
+			Console.WriteLine($" {toValue:0.###}");
+
+			//	Test Diameter to Area.
+			Console.WriteLine("-----");
+			Console.WriteLine("Test circle diameter to area.");
+			Console.WriteLine("Convert from 10 diameter to area.");
+			toValue = converter.Convert("circle", 10, "diameter", "area");
+			Console.WriteLine($" {toValue:0.###}");
 
 			//	From Example 1 on GitHub main page.
 			Console.WriteLine("-----");

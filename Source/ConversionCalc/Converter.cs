@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (c). 1997 - 2024 Daniel Patterson, MCSD (danielanywhere).
+/*
+ * Copyright (c). 1997 - 2025 Daniel Patterson, MCSD (danielanywhere).
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,6 +89,12 @@ namespace ConversionCalc
 							result = 1d / value;
 						}
 						break;
+					case ConversionOperationEnum.Square:
+						result = Math.Pow(value, 2d);
+						break;
+					case ConversionOperationEnum.SquareRoot:
+						result = Math.Sqrt(value);
+						break;
 					case ConversionOperationEnum.Subtract:
 						result = value - step.Value;
 						break;
@@ -150,6 +156,12 @@ namespace ConversionCalc
 						{
 							result = 1d / value;
 						}
+						break;
+					case ConversionOperationEnum.Square:
+						result = Math.Sqrt(value);
+						break;
+					case ConversionOperationEnum.SquareRoot:
+						result = Math.Pow(value, 2d);
 						break;
 					case ConversionOperationEnum.Subtract:
 						result = value + step.Value;
@@ -487,6 +499,78 @@ namespace ConversionCalc
 			}
 			return result;
 		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Return the conversion of the caller's source value from the source unit
+		/// to the target unit within the specified domain.
+		/// </summary>
+		/// <param name="domainName">
+		/// Name of the domain, or unique part of the domain name, with or without
+		/// spaces, in any case. For example,
+		/// the category "Binary Data" can be expressed as "binarydata", as
+		/// "binary", or simply as "bin".
+		/// </param>
+		/// <param name="sourceValue">
+		/// The value to be converted.
+		/// </param>
+		/// <param name="sourceUnit">
+		/// The unit of measurement from which to convert the value.
+		/// </param>
+		/// <param name="targetUnit">
+		/// The unit of measurement to which the value will be converted.
+		/// </param>
+		/// <returns>
+		/// The converted representation of the caller's value.
+		/// </returns>
+		public double Convert(string domainName, double sourceValue,
+			string sourceUnit, string targetUnit)
+		{
+			ConversionDomainItem domain = null;
+			string lDomainName = "";
+			double result = sourceValue;
+
+			if(domainName?.Length > 0 &&
+				sourceUnit?.Length > 0 && targetUnit?.Length > 0)
+			{
+				//	Attempt to find an exact match first.
+				domain = mData.Domains.FirstOrDefault(x =>
+					x.DomainName == domainName &&
+					HasDefinition(x, sourceUnit) &&
+					HasDefinition(x, targetUnit));
+				lDomainName = domainName.Replace(" ", "").ToLower();
+				if(domain == null)
+				{
+					//	Attempt to find case-insensitive, space-insensitive.
+					domain = mData.Domains.FirstOrDefault(x =>
+						x.DomainName.Replace(" ", "").ToLower() == lDomainName &&
+						HasDefinition(x, sourceUnit) &&
+						HasDefinition(x, targetUnit));
+				}
+				if(domain == null)
+				{
+					//	Attempt to find cases were the case-insensitive,
+					//	space-insensitive domain name contains the lower, no space
+					//	domain name and both source and target units are present.
+					domain = mData.Domains.FirstOrDefault(x =>
+						x.DomainName.Replace(" ", "").ToLower().
+							IndexOf(lDomainName) > -1 &&
+						HasDefinition(x, sourceUnit) &&
+						HasDefinition(x, targetUnit));
+				}
+				if(domain != null)
+				{
+					//	The domain was found.
+					return Convert(domain, sourceValue, sourceUnit, targetUnit);
+				}
+				else
+				{
+					//	Domain was not found.
+					OnDomainNotFound(
+						$"Domain: {domainName}; Source:{sourceUnit}; Target:{targetUnit}");
+				}
+			}
+			return result;
+		}
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
@@ -643,6 +727,36 @@ namespace ConversionCalc
 				result = mData.Domains.FirstOrDefault(x =>
 					x.Conversions.Exists(y =>
 						y.Name == unitName || y.Aliases.Contains(unitName)));
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* HasDefinition																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a value indicating whether the provided definition contains a
+		/// conversion for the specified unit.
+		/// </summary>
+		/// <param name="domain">
+		/// Reference to the domain to be checked.
+		/// </param>
+		/// <param name="unit">
+		/// Name of the unit to find.
+		/// </param>
+		/// <returns>
+		/// Value indicating whether the provided domain contains the specified
+		/// unit conversion.
+		/// </returns>
+		public bool HasDefinition(ConversionDomainItem domain, string unit)
+		{
+			bool result = false;
+
+			if(domain != null && unit?.Length > 0)
+			{
+				result = domain.Conversions.Exists(x =>
+					x.Name == unit || x.Aliases.Contains(unit));
 			}
 			return result;
 		}

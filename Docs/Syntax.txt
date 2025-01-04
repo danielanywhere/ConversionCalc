@@ -10,5 +10,5 @@ ConversionCalcExample /convertfrom:{ValueAndUnit} /convertto:{Unit} [/wait]
                         before closing the application.
 
 Example:
-ConversionCalcExample /convertfrom:10 miles /convertto:mm
+ConversionCalcExample "/convertfrom:10 miles" /convertto:mm
 

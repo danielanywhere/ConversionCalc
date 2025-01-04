@@ -66,11 +66,11 @@ namespace ConversionCalc {
         ///		&quot;In the weights and measures configuration, the strategy is as follows:&quot;,
         ///		&quot;1. - Convert the given value to its base.&quot;,
         ///		&quot;2. - Convert from the base to the target unit.&quot;,
-        ///		&quot;All of the entries in the data catalog are annotated such you first &quot;,
-        ///		&quot;look up the source unit in the conversions list, then perform the &quot;,
+        ///		&quot;All of the entries in the data catalog are annotated such that you &quot;,
+        ///		&quot;first look up the source unit in the conversions list, then perform the &quot;,
         ///		&quot;noted operation on that entry to arrive at the base value for the &quot;,
         ///		&quot;domain. By default, when an Operation property is not specified, &quot;,
-        ///		&quot;Multiply is implied. [rest of string was truncated]&quot;;.
+        ///		&quot;Multiply is imp [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DefaultData {
             get {
