@@ -38,3 +38,4 @@ namespace MyProject
 For more information, please see the GitHub project:
 [danielanywhere/ConversionCalc](https://github.com/danielanywhere/ConversionCalc)
 
+Full API documentation is available at this library's [GitHub User Page](https://danielanywhere.github.io/ConversionCalc).
