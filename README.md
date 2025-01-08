@@ -186,6 +186,10 @@ In **Visual Studio Code**:
 
 ## Usage Notes
 
+For the full documentation of this library, you can access the API in
+HTML format at the associated GitHub user page library
+<https://danielanywhere.github.io/ConversionCalc>.
+
 The main object in this library is instantiated from the Converter
 class. In general, create a new instance of Converter and call its
 various methods, as in the following example.

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-		<PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
     <Nullable>disable</Nullable>
     <UserSecretsId>86c20554-5526-4546-a354-2803c6705884</UserSecretsId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -14,6 +14,7 @@
     <PackageProjectUrl>https://github.com/danielanywhere/ConversionCalc</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>Daniel Patterson, MCSD (danielanywhere)</Authors>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
