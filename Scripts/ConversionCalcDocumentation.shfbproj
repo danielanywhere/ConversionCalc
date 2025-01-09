@@ -10,7 +10,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7ddcf6a9-d858-4cae-9523-8bae905a40df}</ProjectGuid>
+    <ProjectGuid>{9cb17478-ffb6-4922-b9fb-1ee3d466ceaa}</ProjectGuid>
     <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
@@ -36,7 +36,7 @@
       <DocumentationSource sourceFile="..\Source\ConversionCalc\bin\Release\netstandard2.0\ConversionCalc.dll" />
     </DocumentationSources>
     <HelpTitle>Dan&amp;#39%3bs ConversionCalc Library</HelpTitle>
-    <HelpFileVersion>25.1104.1240</HelpFileVersion>
+    <HelpFileVersion>25.1109.1402</HelpFileVersion>
     <NamingMethod>Guid</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <RootNamespaceContainer>False</RootNamespaceContainer>
@@ -52,9 +52,8 @@
     <ProjectSummary>
     </ProjectSummary>
     <NamespaceSummaries>
-      <NamespaceSummaryItem name="(global)" isDocumented="True">An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Geometry" isDocumented="False">An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="ConversionCalc" isDocumented="True">An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications.</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="True">An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications. See the full project source at &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/danielanywhere/ConversionCalc&quot;&gt;https://github.com/danielanywhere/ConversionCalc&lt;/a&gt;</NamespaceSummaryItem>
+<NamespaceSummaryItem name="ConversionCalc" isDocumented="True">An easy-to-implement function library providing generic numeric conversions in a wide array of possible scenarios for engineering and practical applications. See the full project source at &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/danielanywhere/ConversionCalc&quot;&gt;https://github.com/danielanywhere/ConversionCalc&lt;/a&gt;</NamespaceSummaryItem></NamespaceSummaries>
     <WarnOnMissingSourceContext>False</WarnOnMissingSourceContext>
     <WorkingPath>..\..\danielanywhere.github.io\ConversionCalc\Working\</WorkingPath>
   </PropertyGroup>

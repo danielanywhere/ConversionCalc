@@ -29,6 +29,7 @@ namespace MyProject
 
 | Version | Description |
 |---------|-------------|
+| 25.1109.1402 | Intellisense support added. |
 | 25.1104.1240 | Added overload method **public double Convert(string domainName, double sourceValue, string sourceUnit,string targetUnit)**. This provides a method by which you can perform a domain-specific conversion with a case-insensitive partial name of the intended conversion category; **Angles** and **Circles** conversion categories have been added to the default rule set. |
 | 24.1220.1425 | Initial public release. |
 
