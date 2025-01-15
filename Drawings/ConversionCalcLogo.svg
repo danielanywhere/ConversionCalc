@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128.02005"
+   height="128.2847"
+   viewBox="0 0 33.871972 33.941993"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="ConversionCalcLogo.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="183.61417"
+       y="10.383723"
+       width="81.784477"
+       height="98.622459"
+       id="rect850" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="77.033956"
+     inkscape:cy="164.82191"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-17.6)">
+    <g
+       id="g863"
+       transform="matrix(0.25447603,0,0,0.24619066,0.49814744,9.5137839)"
+       style="stroke-width:3.99522"
+       inkscape:export-filename="..\Images\ConversionCalcLogo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         xml:space="preserve"
+         id="text848"
+         style="font-style:normal;font-weight:normal;font-size:70.5556px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect850);fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.99522;"
+         transform="translate(-159.85935,52.67563)"><tspan
+           x="193.91339"
+           y="74.752828"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70.5556px;font-family:Verdana;-inkscape-font-specification:'Verdana Bold';stroke-width:3.99522">#</tspan></tspan></text>
+      <g
+         id="g856"
+         style="stroke-width:3.99522">
+        <path
+           style="fill:#356a9f;fill-opacity:1;fill-rule:evenodd;stroke:#356ba0;stroke-width:2.11414;stroke-linecap:round;stroke-opacity:1"
+           d="M 106.3058,35.364881 V 67.492857 H 74.083332 L 81.926339,59.64985 C 70.330453,54.605691 58.496396,54.205842 46.396576,58.988392 32.456462,65.49657 23.516638,76.734752 18.898809,92.061308 16.237563,104.79693 19.99138,116.10699 26.363839,126.83512 L 12.85119,140.34777 C 4.2166459,127.54008 -2.9362012,113.67875 -0.37797618,92.911756 5.7234877,60.769987 22.103537,48.344116 40.821427,40.845535 58.910639,33.598809 77.897906,35.389791 95.816964,45.664732 Z"
+           id="path844"
+           sodipodi:nodetypes="cccccccccscc" />
+        <path
+           style="fill:#356a9f;fill-opacity:1;fill-rule:evenodd;stroke:#356a9f;stroke-width:2.11414;stroke-linecap:round;stroke-opacity:1"
+           d="m 22.883874,168.19453 v -32.12797 h 32.222468 l -7.843007,7.843 c 11.595886,5.04416 23.429943,5.44401 35.529763,0.66146 13.940114,-6.50818 22.879942,-17.74636 27.497762,-33.07292 2.66125,-12.735618 -1.09257,-24.045678 -7.46503,-34.773808 l 13.51265,-13.51265 c 8.63455,12.80769 15.7874,26.66902 13.22917,47.436018 -6.10146,32.14177 -22.48151,44.56764 -41.199403,52.06622 -18.089212,7.24672 -37.076479,5.45574 -54.995537,-4.8192 z"
+           id="path846"
+           sodipodi:nodetypes="cccccccccscc" />
+      </g>
+    </g>
+  </g>
+</svg>
