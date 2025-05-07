@@ -13,8 +13,10 @@
     <Copyright>Copyright(c) 2025. Daniel Patterson, MCSD (danielanywhere)</Copyright>
     <PackageProjectUrl>https://github.com/danielanywhere/ConversionCalc</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>conversion;numeric;angles;binary;circles;count;density;distance;power;pressure;temperature;time;volume;weight</PackageTags>
     <Authors>Daniel Patterson, MCSD (danielanywhere)</Authors>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>

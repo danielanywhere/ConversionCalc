@@ -37,7 +37,7 @@
     </DocumentationSources>
     <HelpTitle>Dan&amp;#39%3bs ConversionCalc Library</HelpTitle>
     <HelpFileVersion>25.1109.1402</HelpFileVersion>
-    <NamingMethod>Guid</NamingMethod>
+    <NamingMethod>MemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <NamespaceGrouping>False</NamespaceGrouping>
