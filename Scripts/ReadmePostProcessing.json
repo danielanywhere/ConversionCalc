@@ -34,5 +34,11 @@
 		"FindPattern": "(?s:(?i:( |\\t)*\\{pre\\}(?<lineContent>.*?)( |\\t)*\\{/pre\\}))",
 		"ReplacePattern": "<pre>${lineContent}</pre>",
 		"UseRegEx": 1
+	},
+	{
+		"Remarks": "Set the marked content to code.",
+		"FindPattern": "(?s:(?i:\\{code\\}( |\\t)*(?<lineContent>.*?)( |\\t)*\\{/code\\}))",
+		"ReplacePattern": "<code>${lineContent}</code>",
+		"UseRegEx": 1
 	}
 ]

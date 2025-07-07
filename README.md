@@ -1327,3 +1327,8 @@ appears when EntryType = "Procedure".
 ```
 
 <p>&nbsp;</p>
+
+**NOTE**: Also see the file <code>Data/DefaultData.json</code>, in this
+repository, for examples of how the base conversions have been prepared.
+
+<p>&nbsp;</p>
