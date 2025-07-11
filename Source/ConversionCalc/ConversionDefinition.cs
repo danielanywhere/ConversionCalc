@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c). 1997 - 2024 Daniel Patterson, MCSD (danielanywhere).
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -91,21 +91,6 @@ namespace ConversionCalc
 			set { mDomain = value; }
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	DomainName																														*
-		////*-----------------------------------------------------------------------*
-		//private string mDomainName = "";
-		///// <summary>
-		///// Get/Set the name of the domain in which this item is located.
-		///// </summary>
-		//[JsonIgnore]
-		//public string DomainName
-		//{
-		//	get { return mDomainName; }
-		//	set { mDomainName = value; }
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	EntryType																															*
