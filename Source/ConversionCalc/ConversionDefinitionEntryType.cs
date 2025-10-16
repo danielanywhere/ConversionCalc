@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c). 1997 - 2024 Daniel Patterson, MCSD (danielanywhere).
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -41,6 +41,10 @@ namespace ConversionCalc
 		/// This conversion can be performed as a single operation from the base.
 		/// </summary>
 		Conversion,
+		/// <summary>
+		/// Resolve the item externally through an event.
+		/// </summary>
+		External,
 		/// <summary>
 		/// This conversion requires a series of operational steps to complete.
 		/// </summary>

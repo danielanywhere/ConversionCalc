@@ -6,6 +6,15 @@ practical applications.
 
 <p>&nbsp;</p>
 
+**New!**: CSS Measurement Units and event-based external value
+resolution!
+
+See **Source/ConversionCalcExample/Program.cs** methods *Run*,
+*converter\_ResolveBaseToValue*, and *converter\_ResolveValueToBase* for
+examples of how to use relative CSS unit values.
+
+<p>&nbsp;</p>
+
 ## Table of Contents
 
 You can jump to any section of this page from the following list.
@@ -723,7 +732,12 @@ the cosmic scale.
 
 #### Units
 
-The distance domain includes the following units of measure.
+The distance domain includes the following units of measure. The
+concrete CSS units pc, pt, and px are included on this list. For an
+example of how to implement the relative CSS units ch, em, ex, rem, vh,
+vmax, vmin, and vw, please see the methods 'Run',
+'converter\_ResolveBaseToValue' and 'converter\_ResolveValueToBase' in
+Source/ConversionCalcExample/Program.cs.
 
 -   **AU**. Astronomical Units.
 
@@ -820,6 +834,14 @@ The distance domain includes the following units of measure.
 
 -   **nm/sec**. \[nanometer/sec, nanometers/sec\]. Nanometers per
     second.
+
+-   **pc**. \[pica, picas\]. CSS measurement unit. 1 pica = 12 points.
+
+-   **pt**. \[point, points\]. CSS measurement unit. 1 point = 1/72
+    inch.
+
+-   **px**. \[pixel, pixels\]. CSS measurement unit. 1 pixel = 1/96 inch
+    on a general purpose LCD display.
 
 <p>&nbsp;</p>
 

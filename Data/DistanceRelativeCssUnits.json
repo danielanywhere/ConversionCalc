@@ -1,0 +1,45 @@
+[
+	{
+		"EntryType": "External",
+		"Name": "ch",
+		"Aliases": [
+			"character"
+		],
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "em",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "Conversion",
+		"Name": "ex",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "rem",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "vh",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "vmax",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "vmin",
+		"Value": 0.002645833
+	},
+	{
+		"EntryType": "External",
+		"Name": "vw",
+		"Value": 0.002645833
+	}
+]

@@ -51,7 +51,7 @@ namespace ConversionCalc
 		/// <returns>
 		/// Calculated value.
 		/// </returns>
-		private static double CalculateForward(IConversionStep step, double value)
+		private double CalculateForward(IConversionStep step, double value)
 		{
 			ConversionDefinitionItem defItem = null;
 			double result = 0d;
@@ -119,7 +119,7 @@ namespace ConversionCalc
 		/// <returns>
 		/// Calculated value.
 		/// </returns>
-		private static double CalculateReverse(IConversionStep step, double value)
+		private double CalculateReverse(IConversionStep step, double value)
 		{
 			ConversionDefinitionItem defItem = null;
 			double result = 0d;
@@ -187,20 +187,36 @@ namespace ConversionCalc
 		/// <returns>
 		/// The converted value resulting from the operation.
 		/// </returns>
-		private static double ProcessForward(
+		private double ProcessForward(
 			ConversionDefinitionItem definition,
 			double value)
 		{
+			ConversionEventArgs resolveArgs = null;
 			double result = value;
 
 			if(definition?.EntryType != ConversionDefinitionEntryType.Base)
 			{
-				//	This item is eligible for conversion.
 				//	A target is known.
 				switch(definition.EntryType)
 				{
 					case ConversionDefinitionEntryType.Conversion:
 						result = CalculateForward(definition, value);
+						break;
+					case ConversionDefinitionEntryType.External:
+						resolveArgs = new ConversionEventArgs()
+						{
+							Definition = definition,
+							Value = value
+						};
+						ResolveValueToBase?.Invoke(definition, resolveArgs);
+						if(resolveArgs.Handled)
+						{
+							result = resolveArgs.Value;
+						}
+						else
+						{
+							result = value;
+						}
 						break;
 					case ConversionDefinitionEntryType.Procedure:
 						foreach(ConversionStepItem stepItem in definition.Steps)
@@ -230,11 +246,12 @@ namespace ConversionCalc
 		/// <returns>
 		/// The converted value resulting from the operation.
 		/// </returns>
-		private static double ProcessReverse(ConversionDefinitionItem definition,
+		private double ProcessReverse(ConversionDefinitionItem definition,
 			double value)
 		{
 			int count = 0;
 			int index = 0;
+			ConversionEventArgs resolveArgs = null;
 			double result = value;
 			List<ConversionStepItem> steps = null;
 
@@ -246,6 +263,22 @@ namespace ConversionCalc
 				{
 					case ConversionDefinitionEntryType.Conversion:
 						result = CalculateReverse(definition, value);
+						break;
+					case ConversionDefinitionEntryType.External:
+						resolveArgs = new ConversionEventArgs()
+						{
+							Definition = definition,
+							Value = value
+						};
+						ResolveBaseToValue?.Invoke(definition, resolveArgs);
+						if(resolveArgs.Handled)
+						{
+							result = resolveArgs.Value;
+						}
+						else
+						{
+							result = value;
+						}
 						break;
 					case ConversionDefinitionEntryType.Procedure:
 						steps = definition.Steps;
@@ -837,6 +870,24 @@ namespace ConversionCalc
 		/// Fired when a message has been emitted during a conversion.
 		/// </summary>
 		public event EventHandler<TextEventArgs> MessageReady;
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* ResolveBaseToValue																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Resolve the base of the domain to the provided value.
+		/// </summary>
+		public event EventHandler<ConversionEventArgs> ResolveBaseToValue;
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* ResolveValueToBase																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Resolve the provided value to the base of the domain.
+		/// </summary>
+		public event EventHandler<ConversionEventArgs> ResolveValueToBase;
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*

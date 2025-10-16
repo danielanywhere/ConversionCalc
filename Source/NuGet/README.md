@@ -29,6 +29,7 @@ namespace MyProject
 
 | Version | Description |
 |---------|-------------|
+| 25.3016.3818 | Added the remaining concrete CSS Unit Measurements **pc**, **pt**, and **px** (examples of the relative measurements **ch**, **em**, **ex**, **rem**, **vh**, **vmax**, **vmin**, and **vw** are available in the example source at the GitHib page) to the **Distance** domain; Added **External** conversion entry type with associated events **ResolveValueToBase** and **ResolveBaseToValue** to handle external down-conversion and up-conversion steps, respectively. |
 | 25.1109.1402 | Intellisense support added. |
 | 25.1104.1240 | Added overload method **public double Convert(string domainName, double sourceValue, string sourceUnit,string targetUnit)**. This provides a method by which you can perform a domain-specific conversion with a case-insensitive partial name of the intended conversion category; **Angles** and **Circles** conversion categories have been added to the default rule set. |
 | 24.1220.1425 | Initial public release. |

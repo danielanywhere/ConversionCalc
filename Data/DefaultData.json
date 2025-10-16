@@ -1049,6 +1049,24 @@
 							"RefName": "AU/sec"
 						}
 					]
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "pc",
+					"Aliases": [ "pica", "picas" ],
+					"Value": 0.042333333
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "pt",
+					"Aliases": [ "point", "points" ],
+					"Value": 0.003527778
+				},
+				{
+					"EntryType": "Conversion",
+					"Name": "px",
+					"Aliases": [ "pixel", "pixels" ],
+					"Value": 0.002645833
 				}
 			]
 		},

@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using ConversionCalc;
 
 namespace ConversionCalcExample
@@ -89,6 +90,122 @@ namespace ConversionCalcExample
 		private void converter_MessageReady(object sender, TextEventArgs e)
 		{
 			Console.WriteLine(e.Value);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* converter_ResolveBaseToValue																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Resolve the base to a resulting value.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Conversion event arguments.
+		/// </param>
+		private void converter_ResolveBaseToValue(object sender,
+			ConversionEventArgs e)
+		{
+			//	Relative CSS Unit Values.
+			if(e != null)
+			{
+				switch(e.Definition.Name)
+				{
+					case "ch":
+						//	1ch = height in current font and size @16px * 0.666666667 =
+						//	10.666666672px.
+						e.Value *= 1d / (10.666666672d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "em":
+						//	1em = 'M' in current font height @ 12pt = 16px.
+						e.Value *= 1d / (16d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "ex":
+						//	1ex = 'X' in current font height = 16px.
+						e.Value *= 1d / (16d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "rem":
+						//	1rem = 10pt = 13px.
+						e.Value *= 1d / (13.333333333d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "vh":
+					case "vmin":
+						//	@1080 H, 1vh = 10.8px.
+						e.Value *= 1d / (10.8d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "vw":
+					case "vmax":
+						//	@1920 W, 1vw = 19.2px.
+						e.Value *= 1d / (19.2d * e.Definition.Value);
+						e.Handled = true;
+						break;
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* converter_ResolveValueToBase																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Resolve the starting value to the base.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Conversion event arguments.
+		/// </param>
+		private void converter_ResolveValueToBase(object sender,
+			ConversionEventArgs e)
+		{
+			//	Relative CSS Unit Values.
+			if(e != null)
+			{
+				switch(e.Definition.Name)
+				{
+					case "ch":
+						//	1ch = height in current font and size @16px * 0.666666667 =
+						//	10.666666672px.
+						e.Value *= (10.666666672d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "em":
+						//	1em = 'M' in current font height @ 12pt = 16px.
+						e.Value *= (16d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "ex":
+						//	1ex = 'X' in current font height = 16px.
+						e.Value *= (16d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "rem":
+						//	1rem = 10pt = 13px.
+						e.Value *= (13.333333333d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "vh":
+					case "vmin":
+						//	@1080 H, 1vh = 10.8px.
+						e.Value *= (10.8d * e.Definition.Value);
+						e.Handled = true;
+						break;
+					case "vw":
+					case "vmax":
+						//	@1920 W, 1vw = 19.2px.
+						e.Value *= (19.2d * e.Definition.Value);
+						e.Handled = true;
+						break;
+				}
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -375,6 +492,100 @@ namespace ConversionCalcExample
 			converter.MessageReady += converter_MessageReady;
 			converter.SourceUnitNotFound += converter_SourceUnitNotFound;
 			converter.TargetUnitNotFound += converter_TargetUnitNotFound;
+			converter.ResolveBaseToValue += converter_ResolveBaseToValue;
+			converter.ResolveValueToBase += converter_ResolveValueToBase;
+
+			//	Add relative Css Units to the Distance domain.
+			domain = converter.Data.Domains.FirstOrDefault(x =>
+				x.DomainName == "Distance");
+			if(domain != null)
+			{
+				//	All of the CSS relative conversions in this example are
+				//	based in pixels.
+				domain.Conversions.AddRange(new ConversionDefinitionItem[]
+				{
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "ch",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "em",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "ex",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "rem",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "vh",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "vmax",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "vmin",
+						Value = 0.002645833d
+					},
+					new ConversionDefinitionItem()
+					{
+						EntryType = ConversionDefinitionEntryType.External,
+						Name = "vw",
+						Value = 0.002645833d
+					}
+				});
+			}
+
+			//	CSS Units. Convert 12pt to px.
+			Console.WriteLine("-----");
+			Console.WriteLine("Test 12pt to px.");
+			toValue = converter.Convert("distance", 12, "pt", "px");
+			Console.WriteLine($" {toValue:0.###}px");
+
+			//	CSS Units. Convert 10pt to px.
+			Console.WriteLine("Test 10pt to px.");
+			toValue = converter.Convert("distance", 10, "pt", "px");
+			Console.WriteLine($" {toValue:0.###}px");
+
+			//	CSS Units. Convert 1.2em to px (at 12pt font).
+			Console.WriteLine("Test 1.2em to px (at 12pt font).");
+			toValue = converter.Convert("distance", 1.2d, "em", "px");
+			Console.WriteLine($" {toValue:0.###}px");
+
+			//	CSS Units. Convert 2rem to px (at 10pt font).
+			Console.WriteLine("Test 2rem to px (at 10pt font).");
+			toValue = converter.Convert("distance", 2d, "rem", "px");
+			Console.WriteLine($" {toValue:0.###}px");
+
+			//	CSS Units. Convert 10vh to px (@ 1080H viewport).
+			Console.WriteLine("Test 10vh to px (@ 1080H viewport).");
+			toValue = converter.Convert("distance", 10d, "vh", "px");
+			Console.WriteLine($" {toValue:0.###}px");
+
+			//	CSS Units. Convert 100px to vh (@ 1080H viewport).
+			Console.WriteLine("Test 100px to vh (@ 1080H viewport).");
+			toValue = converter.Convert("distance", 100d, "px", "vh");
+			Console.WriteLine($" {toValue:0.###}vh");
+
 
 			//	Test Degrees to Radians.
 			Console.WriteLine("-----");
