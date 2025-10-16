@@ -667,9 +667,9 @@ namespace ConversionCalcExample
 									count = sourceDomains.Count;
 									for(index = 0; index < count - 1; index ++)
 									{
-										builder.Append(" ");
+										builder.Append(' ');
 										builder.Append(sourceDomains[index]);
-										builder.Append(",");
+										builder.Append(',');
 									}
 									builder.AppendLine($" and {sourceDomains[^1]}");
 								}
@@ -685,9 +685,9 @@ namespace ConversionCalcExample
 									count = targetDomains.Count;
 									for(index = 0; index < count - 1; index++)
 									{
-										builder.Append(" ");
+										builder.Append(' ');
 										builder.Append(targetDomains[index]);
-										builder.Append(",");
+										builder.Append(',');
 									}
 									builder.AppendLine($" and {targetDomains[^1]}");
 								}
